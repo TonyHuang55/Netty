@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="1b43adf7-0008-44d1-94b9-66c74e4356d1" name="默认更改列表" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="D:/Maven/apache-maven-3.6.0" />
+        <option name="userSettingsFile" value="D:\Maven\apache-maven-3.6.0\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1zMHp0AbiQlrz4waQBHPhM0oILu" />
+  <component name="ProjectViewState">
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="extract.method.default.visibility" value="private" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="project.structure.last.edited" value="模块" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="reference.projectsettings.compiler.javacompiler" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\idea_java_projects\Netty\netty-demo\src\main\resources" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.HelloClient">
+    <configuration name="HelloClient" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="netty.c1.HelloClient" />
+      <module name="netty-demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="netty.c1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HelloServer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="netty.c1.HelloServer" />
+      <module name="netty-demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="netty.c1.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.HelloClient" />
+        <item itemvalue="Application.HelloServer" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1b43adf7-0008-44d1-94b9-66c74e4356d1" name="默认更改列表" comment="" />
+      <created>1633951215097</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1633951215097</updated>
+      <workItem from="1633951217716" duration="29793000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="223" y="65" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1634096965666">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="223" y="65" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.834@0.0.1536.834" timestamp="1634096965666" />
+    <state x="530" y="59" key="#com.intellij.ide.util.MemberChooser" timestamp="1634094432563">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="530" y="59" key="#com.intellij.ide.util.MemberChooser/0.0.1536.834@0.0.1536.834" timestamp="1634094432563" />
+    <state x="261" y="0" key="#项目结构" timestamp="1633953513571">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="261" y="0" key="#项目结构/0.0.1536.834@0.0.1536.834" timestamp="1633953513571" />
+    <state width="1483" height="201" key="GridCell.Tab.0.bottom" timestamp="1634106687552">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1483" height="201" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1634106687552" />
+    <state width="1483" height="201" key="GridCell.Tab.0.center" timestamp="1634106687552">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1483" height="201" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1634106687552" />
+    <state width="1483" height="201" key="GridCell.Tab.0.left" timestamp="1634106687552">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1483" height="201" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1634106687552" />
+    <state width="1483" height="201" key="GridCell.Tab.0.right" timestamp="1634106687552">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1483" height="201" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1634106687552" />
+    <state width="1483" height="251" key="GridCell.Tab.1.bottom" timestamp="1634087199286">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1483" height="251" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1634087199286" />
+    <state width="1483" height="251" key="GridCell.Tab.1.center" timestamp="1634087199286">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1483" height="251" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1634087199286" />
+    <state width="1483" height="251" key="GridCell.Tab.1.left" timestamp="1634087199286">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1483" height="251" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1634087199286" />
+    <state width="1483" height="251" key="GridCell.Tab.1.right" timestamp="1634087199286">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1483" height="251" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1634087199286" />
+    <state x="154" y="0" key="SettingsEditor" timestamp="1633952164194">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="154" y="0" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1633952164194" />
+    <state x="105" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1634004093644">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="105" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.834@0.0.1536.834" timestamp="1634004093644" />
+    <state x="436" y="121" key="extract.method.dialog" timestamp="1634004013392">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="436" y="121" key="extract.method.dialog/0.0.1536.834@0.0.1536.834" timestamp="1634004013392" />
+    <state x="323" y="48" width="890" height="738" key="find.popup" timestamp="1634087201884">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="323" y="48" width="890" height="738" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1634087201884" />
+    <state x="347" y="0" width="840" height="832" key="search.everywhere.popup" timestamp="1634106882090">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="347" y="0" width="840" height="832" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1634106882090" />
+  </component>
+</project>
