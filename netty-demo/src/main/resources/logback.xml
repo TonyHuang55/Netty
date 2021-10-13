@@ -24,7 +24,7 @@
     </appender>-->
 
     <!-- 用来控制查看那个类的日志内容 -->
-    <logger name="nettyLearn" level="DEBUG" additivity="false">
+    <logger name="netty" level="DEBUG" additivity="false">
         <appender-ref ref="STDOUT"/>
     </logger>
 
