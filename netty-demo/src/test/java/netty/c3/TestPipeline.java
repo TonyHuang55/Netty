@@ -1,4 +1,4 @@
-package netty.c4;
+package netty.c3;
 
 import io.netty.bootstrap.ServerBootstrap;
 import io.netty.buffer.ByteBuf;
@@ -77,7 +77,7 @@ public class TestPipeline {
                         /*
                         20:50:04 [DEBUG] [nioEventLoopGroup-2-2] n.c4.TestPipeline - h1
                         20:50:04 [DEBUG] [nioEventLoopGroup-2-2] n.c4.TestPipeline - h2
-                        20:50:04 [DEBUG] [nioEventLoopGroup-2-2] n.c4.TestPipeline - h3，结果TestPipeline.Student(name=abc),classclass netty.c4.TestPipeline$Student
+                        20:50:04 [DEBUG] [nioEventLoopGroup-2-2] n.c4.TestPipeline - h3，结果TestPipeline.Student(name=abc),classclass netty.c3.TestPipeline$Student
                         20:50:04 [DEBUG] [nioEventLoopGroup-2-2] n.c4.TestPipeline - h6
                         20:50:04 [DEBUG] [nioEventLoopGroup-2-2] n.c4.TestPipeline - h5
                         20:50:04 [DEBUG] [nioEventLoopGroup-2-2] n.c4.TestPipeline - h4
