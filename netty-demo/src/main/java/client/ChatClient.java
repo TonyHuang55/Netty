@@ -1,15 +1,15 @@
 package client;
 
 import io.netty.bootstrap.Bootstrap;
-import io.netty.channel.Channel;
-import io.netty.channel.ChannelHandlerContext;
-import io.netty.channel.ChannelInboundHandlerAdapter;
-import io.netty.channel.ChannelInitializer;
+import io.netty.channel.*;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
+import io.netty.handler.timeout.IdleState;
+import io.netty.handler.timeout.IdleStateEvent;
+import io.netty.handler.timeout.IdleStateHandler;
 import lombok.extern.slf4j.Slf4j;
 import message.*;
 import protocol.MessageCodecSharable;
@@ -31,6 +31,8 @@ public class ChatClient {
         MessageCodecSharable MESSAGE_CODEC = new MessageCodecSharable();
         CountDownLatch WAIT_FOR_LOGIN = new CountDownLatch(1);
         AtomicBoolean LOGIN = new AtomicBoolean(false);
+        AtomicBoolean EXIT = new AtomicBoolean(false);
+        Scanner scanner = new Scanner(System.in);
         try {
             Bootstrap bootstrap = new Bootstrap();
             bootstrap.channel(NioSocketChannel.class);
@@ -41,6 +43,22 @@ public class ChatClient {
                     ch.pipeline().addLast(new ProcotolFrameDecoder());
                     // ch.pipeline().addLast(LOGGING_HANDLER);
                     ch.pipeline().addLast(MESSAGE_CODEC);
+                    // 用来判断是不是 读空闲时间过长 或 写空闲时间过长
+                    // 3s 内如果没有向服务器写数据，会触发一个事件 IdleState#WRITE_IDLE 事件
+                    ch.pipeline().addLast(new IdleStateHandler(0, 3, 0));
+                    // ChannelDuplexHandler 可以同时作为入站和出站处理器
+                    ch.pipeline().addLast(new ChannelDuplexHandler() {
+                        // 用来触发特殊时间
+                        @Override
+                        public void userEventTriggered(ChannelHandlerContext ctx, Object evt) throws Exception {
+                            IdleStateEvent event = (IdleStateEvent) evt;
+                            // 触发了读空闲事件
+                            if (event.state() == IdleState.WRITER_IDLE) {
+                                log.debug("3s 没有写数据了，发送心跳包");
+                                ctx.writeAndFlush(new PingMessage());
+                            }
+                        }
+                    });
                     ch.pipeline().addLast("client handler", new ChannelInboundHandlerAdapter() {
                         // 接收响应消息
                         @Override
@@ -62,11 +80,16 @@ public class ChatClient {
                         public void channelActive(ChannelHandlerContext ctx) throws Exception {
                             // 负责接收用户在控制台的输入，负责向服务器发送各种消息
                             new Thread(() -> {
-                                Scanner scanner = new Scanner(System.in);
                                 System.out.println("请输入用户名：");
                                 String username = scanner.nextLine();
+                                if(EXIT.get()){
+                                    return;
+                                }
                                 System.out.println("请输入密码：");
                                 String password = scanner.nextLine();
+                                if(EXIT.get()){
+                                    return;
+                                }
                                 // 构造消息对象
                                 LoginRequestMessage message = new LoginRequestMessage(username, password);
                                 // 发送消息
@@ -92,7 +115,15 @@ public class ChatClient {
                                     System.out.println("gquit [group name]");
                                     System.out.println("quit");
                                     System.out.println("==================================");
-                                    String command = scanner.nextLine();
+                                    String command = null;
+                                    try {
+                                        command = scanner.nextLine();
+                                    } catch (Exception e) {
+                                        break;
+                                    }
+                                    if(EXIT.get()){
+                                        return;
+                                    }
                                     String[] s = command.split(" ");
                                     switch (s[0]) {
                                         case "send":
@@ -104,6 +135,8 @@ public class ChatClient {
                                         case "gcreate":
                                             Set<String> set = new HashSet<>(Arrays.asList(s[2].split(",")));
                                             ctx.writeAndFlush(new GroupCreateRequestMessage(s[1], set));
+                                            // 加入自己
+                                            set.add(username);
                                             break;
                                         case "gmembers":
                                             ctx.writeAndFlush(new GroupMembersRequestMessage(s[1]));
@@ -120,6 +153,20 @@ public class ChatClient {
                                     }
                                 }
                             }, "system in").start();
+                        }
+
+                        // 在连接断开时触发
+                        @Override
+                        public void channelInactive(ChannelHandlerContext ctx) throws Exception {
+                            log.debug("连接已经断开，按任意键退出..");
+                            EXIT.set(true);
+                        }
+
+                        // 在出现异常时触发
+                        @Override
+                        public void exceptionCaught(ChannelHandlerContext ctx, Throwable cause) throws Exception {
+                            log.debug("连接已经断开，按任意键退出..{}", cause.getMessage());
+                            EXIT.set(true);
                         }
                     });
                 }
